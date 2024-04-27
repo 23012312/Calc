@@ -91,9 +91,9 @@ Publish the website in the given URL.
 ```
 
 ## OUTPUT:
-![alt text](abhi/calcapp/static/1.calc.png)
+![alt text](1.calc.png)
 
-![alt text](abhi/calcapp/static/2.calc.png)
+![alt text](2.calc.png)
 
 
 ## RESULT:
