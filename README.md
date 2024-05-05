@@ -25,75 +25,151 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
-```c
-
-
+```
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
+    <head>
+        <center>
+            <h1>SIMPLE CALCULATOR</h1>
+            <h1>K.ABHINESWAR REDDY(212223040084)</h1>
+        </center>
+        <title>Calculator</title>
+        
+        <script>
+        function calculate(args)
+        {
+            res = document.getElementById("result");
+            expression = res.innerText;
+            cmd = args.srcElement.innerText;
+            if(cmd == "=")
+            {
+                expression = "" + eval(expression)
+            }
+            else if(cmd == "C")
+            {
+                expression=""
+            }
+            else if(cmd == "DEL")
+            {
+                expression = expression.slice(0, -1);
+
+            }
+            else if(cmd == "√")
+            {
+                expression = "" + Math.sqrt(eval(expression));
+            }
+            else if(cmd == "%")
+            {
+                expression = expression % 1;
+            }
+            else if(cmd == "log")
+             {
+        expression = Math.log10(expression);
+           }
+       
+            else{
+                expression = expression + cmd;
+            }
+            res.innerText = expression;
+            
+
+        }
+         
+        </script>
+        <center>
+        <style>
+          
+            .calculator-container {
+                width: 400px;
+                background-color:grey
+                margin: 0 auto; 
+                margin-top: 90px;
+                text-align: center;
+                
+            }
+
+           
+            button {
+                width: 50px;
+                height: 50px;
+                margin: 10px; 
+                font-size: 20px; 
+                
+                background-color: rgb(120, 15, 15); 
+                color: white; 
+                border: none;
+            }
+
+          
+            #result {
+                
+       background-color:#e5e2ec;
+    text-align: right;
+    padding-right: 50px;
+    font-size: 20px;
+    margin-bottom: 20px; 
+    border: solid #d56262 0.5px;
+    color: rgb(73, 56, 165);
+    width: 348px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+            }
+            h1 {
+                padding-top: 10px;
+                color:white;
+                font-size: 50px;
+            }
+            .redd {
+                background-color: rgb(228, 18, 130);
+            }
+            .bluee {
+                
+                background-color: rgb(94, 244, 166);
+            }
+            body {
+                background-color:grey
+            }
+        </style>
+
+    </head>
 <body>
-    <script>
-         function fn(e) {
-        if (e.innerHTML == '=' ) {
-        output.value = eval(output.value);
-        }
-        else if (e.id == 'back') {
-        v = output.value;
-        output.value = v.substring(0, v.length - 1);
-        }
-        else if (e.innerHTML == 'C') {
-        output.value = '';
-        }
-        else {
-        output.value +=  e.innerHTML;
-        }
-    }
-    </script>
-    <h1 align="center">CALCULATOR</h1>
-    <h2 align="center">K.ABHINESWAR REDDY (212223040084)</h2>
-  
-    <div class="bg-dark row mx-auto text-center" style="width: 30rem;">
-    <div class="col-12 my-4"><input type="text" name="" id="output"
-    style="width: 100%; height: 50px; border-radius: 25px;"></div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">(</div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">)</div>
-    <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)">C</div>
-    <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)" id="back"><i class="bi bi-backspace"></i>
+    <div class="calculator-container">
+        <div id="result">0</div>
+        <button onclick="calculate(event);">7</button>
+        <button onclick="calculate(event);">8</button>
+        <button onclick="calculate(event);">9</button>
+        <button class="bluee"  onclick="calculate(event);">/</button>
+        <button class="bluee"  onclick="calculate(event);"> DEL </button><br>
+        <button onclick="calculate(event);">4</button>
+        <button onclick="calculate(event);">5</button>
+        <button onclick="calculate(event);">6</button>
+        <button class="bluee"  onclick="calculate(event);">*</button>
+        <button class="bluee"  onclick="calculate(event);">&radic;</button> </button><br>
+        <button onclick="calculate(event);">1</button>
+        <button onclick="calculate(event);">2</button>
+        <button onclick="calculate(event);">3</button>
+        <button class="bluee"  onclick="calculate(event);">-</button>
+        <button class="bluee"  onclick="calculate(event);">log</button><br>
+        <button onclick="calculate(event);">0</button>
+        <button onclick="calculate(event);">.</button>
+        <button class="redd" onclick="calculate(event);">C</button>
+        <button class="bluee"  onclick="calculate(event);">+</button>
+        <button class="bluee" onclick="calculate(event);">=</button><br>
     </div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">7</div> 
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">8</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">9</div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">*</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">4</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">5</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">6</div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">-</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">1</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">2</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">3</div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">+</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">0</div>
-    <div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">.</div>
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">%</div> 
-    <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">/</div>
-    <div class="m-3 col-11 btn btn-warning rounded-4" onclick="fn(this)">=</div>
-    </div>
-</body>
+    </center>
+    </body>
 </html>
 
 
 ```
 
 ## OUTPUT:
-![alt text](1.calc.png)
+![alt text](1.calculator.png)
 
-![alt text](2.calc.png)
+![alt text](2.calculator.png)
 
 
 ## RESULT:
